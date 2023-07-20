@@ -11,6 +11,7 @@ application {
     applicationDefaultJvmArgs = listOf(
         "-javaagent:splunk-otel-javaagent-1.26.0.jar",
         "-Dotel.javaagent.debug=true",
+        "-Dotel.instrumentation.netty.enabled=false",
         "-Dotel.service.name=VertxExample"
     )
 }
