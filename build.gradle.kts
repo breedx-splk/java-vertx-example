@@ -7,17 +7,15 @@ repositories {
 }
 
 application {
-    mainClass.set("com.splunk.example.SpanAttributesMain")
+    mainClass.set("com.splunk.example.VertxApplication")
     applicationDefaultJvmArgs = listOf(
-        "-javaagent:splunk-otel-javaagent-1.18.0.jar",
+        "-javaagent:splunk-otel-javaagent-1.26.0.jar",
         "-Dotel.javaagent.debug=true",
-        "-Dotel.service.name=SpanAttrExample",
-        "-Dotel.instrumentation.methods.include=com.splunk.example.SpanAttributesMain[superDuperBonusMethod,highScore]"
+        "-Dotel.service.name=VertxExample"
     )
 }
 
 dependencies {
-    implementation("io.vertx:vertx-web:+")
-    implementation("io.vertx:vertx-jdbc-client:+")
-    implementation("io.vertx:vertx-codegen:+")
+    implementation("io.vertx:vertx-web:4.4.4")
+    implementation("io.vertx:vertx-codegen:4.4.4")
 }
