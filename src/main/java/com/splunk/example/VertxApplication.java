@@ -29,6 +29,13 @@ public class VertxApplication {
                         return Future.failedFuture("interrupted a bunch");
                     }
                 });
+        router.get("/error")
+                        .respond( ctx -> {
+                            if(1 == 1){
+                                throw new RuntimeException("boom");
+                            }
+                            return Future.failedFuture("ouch");
+                        });
 
         server.requestHandler(router).listen(PORT);
         System.out.println("Server is running on port " + PORT);
