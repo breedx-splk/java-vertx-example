@@ -1,2 +1,3 @@
 # java-vertx-example
-Example autoinstrumentation of simple vert.x application
+Example autoinstrumentation of simple vertx-web application
+
